@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+ <head>
+      <meta name="viemport">
+ <meta charset="utf-8">
+ <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href=
+    "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+ <title>Аниме и машинки</title>
+ <link rel="stylesheet" href="karus.css">
+ </head>
+ <div class="container">
+<header>
+    <h2>Карусель, карусель</h>
+</header>
+ <body>
+    <div class="main">
+        <div class="scroller">
+            <div class="item">
+                <img src="img/скизы.jpg">
+                <div class="card">
+                    <h3>Stray Kids</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/куплинов.jpg">
+                <div class="card">
+                    <h3>Куплинов</h3>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/реалупыри.jpg">
+                <div class="card">
+                    <h3>Реальные упыри</h3>
+                </div>
+            </div>
+        </div>
+        <span class="btn prev">&lt;</span>
+        <span class="btn next">&gt;</span>
+    </div>
+    <script>
+        const main = document.querySelector('.main');
+        const scroller = main.querySelector('.scroller');
+        const nextBtn = main.querySelector('.btn.next');
+        const prevBtn = main.querySelector('.btn.prev');
+        const itemWidth = main.querySelector('.item').clientWidth;
+
+        nextBtn.addEventListener('click', scrollToNextItem);
+        prevBtn.addEventListener('click', scrollToPrevItem);
+
+        function scrollToNextItem() {
+            if(scroller.scrollLeft < (scroller.scrollWidth - itemWidth))
+                scroller.scrollBy({left: itemWidth, top: 0, behavior:'smooth'});
+            else
+                scroller.scrollTo({left: 0, top: 0, behavior:'smooth'});
+        }
+        function scrollToPrevItem() {
+            if(scroller.scrollLeft != 0)
+                scroller.scrollBy({left: -itemWidth, top: 0, behavior:'smooth'});
+            else
+                scroller.scrollTo({left: scroller.scrollWidth, top: 0, behavior:'smooth'});
+        }
+    </script>
+ </body>
+      <footer>
+    <div class="footer-left">
+    <p class="footer-links">
+      <a style="color: black;">The development: </a>
+      <a href="https://vk.com/sundaly0" style="color: white;">Elizaveta and Polina<i class="fa fa-vk"></i></a>
+    </p>
+    <p class="Pravee">Номер: 8-800-555-35-35</p>
+ </footer>
+ </div>
+</html>
+     
